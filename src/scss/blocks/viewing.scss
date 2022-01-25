@@ -1,0 +1,14 @@
+.viewing {
+  padding: 10px 20px;
+}
+
+.viewing__button {
+  float: right;
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 950px) {
+  .viewing {
+    padding: 0;
+  }
+}

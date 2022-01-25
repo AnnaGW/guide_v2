@@ -1,0 +1,124 @@
+.main-menu__toggle {
+  display: none;
+}
+
+.main-menu {
+  margin-bottom: 30px;
+  background-color: $color-turquoise-light;
+}
+
+.main-menu__list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.main-menu__item { //button
+  padding: 10px;
+  font: inherit;
+  letter-spacing: 2px;
+  //background-color: inherit;
+  background-color: $color-turquoise-light;
+  border: none;
+  outline: none;
+  cursor: default;
+  caret-color: transparent;
+
+  &--disabled,
+  &:disabled { //a
+    color: $color-grey-light;
+  }
+}
+
+.main-menu__upload {
+  display: block;
+  padding: 10px;
+  cursor: default;
+  caret-color: transparent;
+}
+
+.main-menu__download {
+  display: block;
+  padding: 10px;
+  cursor: default;
+  caret-color: transparent;
+}
+
+@media screen and (max-width: 769px) {
+  header {
+    position: relative;
+    height: 44px;
+    margin-bottom: 20px;
+    background-color: $color-turquoise-light;
+  }
+
+  .main-menu__toggle {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    display: block;
+    width: 40px;
+    height: 35px;
+    caret-color: transparent;
+    cursor: pointer;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 10px;
+      right: 0;
+      width: 40px;
+      height: 3px;
+      background-color: #ffffff;
+      box-shadow: 0 10px #ffffff, 0 -10px #ffffff;
+      transition-duration: 1s;
+      transition-property: transform, box-shadow;
+    }
+
+    &--open {
+      &::before {
+        box-shadow: none;
+        transform: rotate(-45deg);
+        transform-origin: center center;
+      }
+
+      &::after {
+        box-shadow: none;
+        transform: rotate(45deg);
+        transform-origin: center center;
+      }
+    }
+  }
+
+  .main-menu {
+    position: absolute;
+    top: 44px;
+    right: 0;
+    z-index: 10;
+    width: 0;
+    margin-left: auto;
+    overflow: hidden;
+    box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.3);
+    transition-duration: 1s;
+    transition-property: width;
+
+    &--open {
+      width: 200px;
+    }
+  }
+
+  .main-menu__list {
+    display: block;
+    width: 200px;
+    margin-left: auto;
+    text-align: right;
+  }
+
+  .main-menu__list button,
+  .main-menu__list a,
+  .main-menu__list label {
+    padding-right: 30px;
+  }
+}

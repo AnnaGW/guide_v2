@@ -1,7 +1,11 @@
-//@import "header.scss";
-$dark: #f67d12;
-body {
-  background-color: $dark;
-  display: grid;
-  user-select: none;
-}
+@import "vars.scss";
+@import "global.scss";
+@import "blocks/guide.scss";
+@import "blocks/main-menu.scss";
+@import "blocks/files-tree.scss";
+@import "blocks/viewing.scss";
+@import "blocks/bookmarks.scss";
+@import "blocks/text-area.scss";
+@import "blocks/animated-popup.scss";
+@import "blocks/message.scss";
+@import "helpers.scss";
