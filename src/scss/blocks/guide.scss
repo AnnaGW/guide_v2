@@ -1,37 +1,28 @@
-.guide {
-  width: 1300px;
-  padding-left: 30px;
-}
-
-.guide__wrap {
+.workspace {
   display: grid;
   grid-template-columns: auto 1fr;
   grid-template-rows: auto;
   column-gap: 20px;
+  width: 1300px;
+  padding-left: 30px;
 }
-
+@media screen and (max-width: 769px) {
+  .workspace {
+    position: relative;
+    display: block;
+    padding-left: 60px;
+  }
+}
+@media screen and (max-width: 850px) {
+  .workspace {
+    column-gap: 10px;
+  }
+}
 @media screen and (max-width: 1301px) {
-  .guide {
+  .workspace {
     box-sizing: border-box;
     width: 100%;
     min-height: calc(100vh - 64px - 46px - 30px);
     padding-right: 30px;
-  }
-}
-
-@media screen and (max-width: 850px) {
-  .guide__wrap {
-    column-gap: 10px;
-  }
-}
-
-@media screen and (max-width: 769px) {
-  .guide {
-    padding-left: 60px;
-  }
-
-  .guide__wrap {
-    position: relative;
-    display: block;
   }
 }

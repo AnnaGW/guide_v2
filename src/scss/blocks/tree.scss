@@ -114,14 +114,6 @@
 }
 
 .tree__folders-atom--empty {
-  position: relative;
-  width: auto;
-  margin: 0;
-  padding: 5px;
-  padding-left: 45px;
-  cursor: default;
-  caret-color: transparent;
-
   &::before {
     content: "";
     position: absolute;
@@ -133,6 +125,9 @@
     background-repeat: no-repeat;
     background-position: left;
     background-size: contain;
+  }
+  &::after {
+    display: none;
   }
 }
 
