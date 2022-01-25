@@ -2,4 +2,6 @@
 $dark: #f67d12;
 body {
   background-color: $dark;
+  display: grid;
+  user-select: none;
 }

@@ -2,7 +2,9 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const postcssPresetEnv = require('postcss-preset-env');
 const ESLintPlugin = require('eslint-webpack-plugin');
+
  
 module.exports = (env, argv) => {
   const isProd = argv.mode === 'production'
@@ -73,6 +75,16 @@ module.exports = (env, argv) => {
           use: [          
             MiniCssExtractPlugin.loader,
             "css-loader",
+            {
+              loader: 'postcss-loader',
+              options: {
+                postcssOptions: {
+                  plugins: [
+                    postcssPresetEnv,                  
+                  ],
+                },
+              },
+            },
             "sass-loader",
           ]
         },
